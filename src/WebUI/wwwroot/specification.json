@@ -1,0 +1,3928 @@
+{
+  "x-generator": "NSwag v13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ProjectAPI API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/security/Account/LoginWeb": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "Account_LoginWeb",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationWebModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+   
+    
+    "/api/AccesoBanco/SendErrorWeb": {
+      "post": {
+        "tags": [
+          "ErroresWeb"
+        ],
+        "operationId": "ErroresWeb_SendErrorWeb",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewErrorWebCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/EstatusCuenta/GetEstatusCuenta": {
+      "get": {
+        "tags": [
+          "EstatusCuenta"
+        ],
+        "operationId": "EstatusCuenta_GetEstatusCuentas",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetEstatusCuentaQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/EstatusEgreso/GetEstatusEgreso": {
+      "get": {
+        "tags": [
+          "EstatusEgreso"
+        ],
+        "operationId": "EstatusEgreso_GetEstatusEgresos",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetEstatusEgresoQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/EstatusIngreso/GetEstatusIngreso": {
+      "get": {
+        "tags": [
+          "EstatusIngreso"
+        ],
+        "operationId": "EstatusIngreso_GetEstatusIngresos",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetEstatusIngresoQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/EstatusRPA/GetEstatusRPA": {
+      "get": {
+        "tags": [
+          "EstatusRPA"
+        ],
+        "operationId": "EstatusRPA_GetEstatusRPA",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetEstatusRPAQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ingreso/NewIngreso": {
+      "post": {
+        "tags": [
+          "Ingreso"
+        ],
+        "operationId": "Ingreso_NewIngreso",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Comprobante": {
+                    "type": "string",
+                    "format": "binary",
+                    "nullable": true
+                  },
+                  "FechaHora": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Monto": {
+                    "type": "number",
+                    "format": "decimal"
+                  },
+                  "CuentaDestinoId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TipoPagoIngresoId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Concepto": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "WalletId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ClienteId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ContactoId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "CuentaOrigen": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngresoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ingreso/DeleteIngreso": {
+      "patch": {
+        "tags": [
+          "Ingreso"
+        ],
+        "operationId": "Ingreso_DeleteIngreso",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteIngresoCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngresoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ingreso/AuditCheckIngreso": {
+      "patch": {
+        "tags": [
+          "Ingreso"
+        ],
+        "operationId": "Ingreso_AuditCheckIngreso",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuditCheckIngresoCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngresoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ingreso/UpdateIngreso": {
+      "patch": {
+        "tags": [
+          "Ingreso"
+        ],
+        "operationId": "Ingreso_UpdateIngreso",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "IngresoId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "FechaHora": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "Monto": {
+                    "type": "number",
+                    "format": "decimal",
+                    "nullable": true
+                  },
+                  "CuentaDestinoId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "nullable": true
+                  },
+                  "Concepto": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "Comprobante": {
+                    "type": "string",
+                    "format": "binary",
+                    "nullable": true
+                  },
+                  "TipoPagoIngresoId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "nullable": true
+                  },
+                  "FechaNotificado": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "ContactoId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "nullable": true
+                  },
+                  "WalletId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngresoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ingreso/Ingreso": {
+      "get": {
+        "tags": [
+          "Ingreso"
+        ],
+        "operationId": "Ingreso_GetIngreso",
+        "parameters": [
+          {
+            "name": "IngresoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngresoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ingreso/ComprobanteIngreso": {
+      "get": {
+        "tags": [
+          "Ingreso"
+        ],
+        "operationId": "Ingreso_GetIngresoComprobante",
+        "parameters": [
+          {
+            "name": "IngresoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MovimientoWallet/NewMovimiento": {
+      "post": {
+        "tags": [
+          "MovimientoWallet"
+        ],
+        "operationId": "MovimientoWallet_NewMovimiento",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMovimientoCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MovimientoWalletDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MovimientoWallet/NewMovimientoWallet": {
+      "post": {
+        "tags": [
+          "MovimientoWallet"
+        ],
+        "operationId": "MovimientoWallet_NewMovimientoWallet",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMovimientoWalletCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MovimientoWalletDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MovimientoWallet/MovimientoWalletList": {
+      "get": {
+        "tags": [
+          "MovimientoWallet"
+        ],
+        "operationId": "MovimientoWallet_GetMovimientoWalletList",
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "ClienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "WalletId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "TipoMovimientoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-position": 5
+          },
+          {
+            "name": "FechaInicial",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
+            "name": "FechaFinal",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "x-position": 7
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedListOfMovimientoWalletDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MovimientoWallet/MovimientoWallet": {
+      "get": {
+        "tags": [
+          "MovimientoWallet"
+        ],
+        "operationId": "MovimientoWallet_GetMovimientoWallet",
+        "parameters": [
+          {
+            "name": "MovimientoWalletId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovimientoWalletDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MovimientoWallet/MovimientoWalletComprobante": {
+      "get": {
+        "tags": [
+          "MovimientoWallet"
+        ],
+        "operationId": "MovimientoWallet_GetMovimientoWalletComprobante",
+        "parameters": [
+          {
+            "name": "MovimientoWalletId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Permiso/GetPermisos": {
+      "get": {
+        "tags": [
+          "Permiso"
+        ],
+        "operationId": "Permiso_GetPermisos",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetPermisosQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Role/GetRoles": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "operationId": "Role_GetPermisos",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetRolesQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RoleDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoCuenta/GetTipoCuenta": {
+      "get": {
+        "tags": [
+          "TipoCuenta"
+        ],
+        "operationId": "TipoCuenta_GetTipoCuentas",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetTipoCuentaQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoMovimiento/GetTipoMovimiento": {
+      "get": {
+        "tags": [
+          "TipoMovimiento"
+        ],
+        "operationId": "TipoMovimiento_GetTipoMovimientos",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetTipoMovimientoQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoPagoEgreso/GetTipoPagoEgreso": {
+      "get": {
+        "tags": [
+          "TipoPagoEgreso"
+        ],
+        "operationId": "TipoPagoEgreso_GetTipoPagoEgresos",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetTipoPagoEgresoQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoPagoIngreso/GetTipoPagoIngreso": {
+      "get": {
+        "tags": [
+          "TipoPagoIngreso"
+        ],
+        "operationId": "TipoPagoIngreso_GetTipoPagoIngresos",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetTipoPagoIngresoQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoToken/GetTipoToken": {
+      "get": {
+        "tags": [
+          "TipoToken"
+        ],
+        "operationId": "TipoToken_GetTipoTokens",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/GetTipoTokenQuery"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wallet/NewWallet": {
+      "post": {
+        "tags": [
+          "Wallet"
+        ],
+        "operationId": "Wallet_NewWallet",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewWalletCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wallet/DeleteWallet": {
+      "patch": {
+        "tags": [
+          "Wallet"
+        ],
+        "operationId": "Wallet_DeleteWallet",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteWalletCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wallet/UpdateWallet": {
+      "patch": {
+        "tags": [
+          "Wallet"
+        ],
+        "operationId": "Wallet_UpdateWallet",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWalletCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wallet/WalletsList": {
+      "get": {
+        "tags": [
+          "Wallet"
+        ],
+        "operationId": "Wallet_GetWalletsList",
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "ClienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedListOfWalletDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wallet/WalletsTodosList": {
+      "get": {
+        "tags": [
+          "Wallet"
+        ],
+        "operationId": "Wallet_GetWalletsTodosList",
+        "parameters": [
+          {
+            "name": "ClienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WalletDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wallet/Wallet": {
+      "get": {
+        "tags": [
+          "Wallet"
+        ],
+        "operationId": "Wallet_GetWallet",
+        "parameters": [
+          {
+            "name": "WalletId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletDtoFull"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccesoBancoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accesoBancoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioPortal": {
+            "type": "string"
+          },
+          "contraseniaPortal": {
+            "type": "string"
+          },
+          "tokenPortal": {
+            "type": "string"
+          },
+          "validezToken": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "coordenadaToken": {
+            "type": "string"
+          },
+          "tipoToken": {
+            "type": "string"
+          },
+          "estatusRpa": {
+            "type": "string"
+          },
+          "tipoTokenId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estatusRpaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ultimoAcceso": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "urlBanco": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailDistributionList": {
+            "type": "string",
+            "nullable": true
+          },
+          "movimientosDias": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "duration"
+          },
+          "nombreBanco": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "DeleteAccesoBancoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accesoBancoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateAccesoBancoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accesoBancoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioPortal": {
+            "type": "string",
+            "nullable": true
+          },
+          "contraseniaPortal": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenPortal": {
+            "type": "string",
+            "nullable": true
+          },
+          "validezToken": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "coordenadaToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoTokenId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estatusRpaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ultimoAcceso": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "urlBanco": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailDistributionList": {
+            "type": "string",
+            "nullable": true
+          },
+          "movimientosDias": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "format": "duration",
+            "nullable": true
+          },
+          "nombreBanco": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AuthenticationWebModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isAuthenticated": {
+            "type": "boolean"
+          },
+          "jwt": {
+            "type": "string"
+          },
+          "refreshToken": {
+            "type": "string"
+          },
+          "expDate": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UsuarioWebModel"
+          }
+        }
+      },
+      "UsuarioWebModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "permisos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CT_PermisosUsuario"
+            }
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "CT_PermisosUsuario": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_PermisoUsuario": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "fK_User": {
+                "type": "string"
+              },
+              "fK_Permiso": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "permiso": {
+                "$ref": "#/components/schemas/CT_Permisos"
+              }
+            }
+          }
+        ]
+      },
+      "CT_Permisos": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_Permiso": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "permiso": {
+                "type": "string",
+                "maxLength": 100,
+                "minLength": 0
+              }
+            }
+          }
+        ]
+      },
+      "BaseAuditableEntity": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseEntity"
+          },
+          {
+            "type": "object",
+            "x-abstract": true,
+            "additionalProperties": false,
+            "properties": {
+              "createDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "lastUpdateDate": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "updatedByUserId": {
+                "type": "string",
+                "nullable": true
+              },
+              "createdBy": {
+                "type": "string",
+                "nullable": true
+              },
+              "isActive": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "BaseEntity": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "domainEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseEvent"
+            }
+          }
+        }
+      },
+      "BaseEvent": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false
+      },
+      "LoginCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "notificationToken": {
+            "type": "string"
+          },
+          "plattaform": {
+            "type": "string"
+          },
+          "so": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteUserCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ValidateEmailCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "NewUserWebCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string"
+          },
+          "permisos": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "RecoveryPassCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "ResetPassCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "newPassword": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdatePassCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "actualPassword",
+          "newPassword"
+        ],
+        "properties": {
+          "actualPassword": {
+            "type": "string",
+            "minLength": 1
+          },
+          "newPassword": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$"
+          },
+          "validateRegEx": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "UpdateUserCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "permisos": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfApplicationUserDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationUserDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ApplicationUserDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "permisos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CT_PermisosUsuario"
+            }
+          }
+        }
+      },
+      "ItemDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "GetBancoQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "AR_MovimientosBanco": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_MovimientoBanco": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "fK_CuentaDelGrupo": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "fecha": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "hora": {
+                "type": "string",
+                "format": "duration"
+              },
+              "conceptoReferencia": {
+                "type": "string",
+                "maxLength": 200,
+                "minLength": 0
+              },
+              "cargo": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true
+              },
+              "abono": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true
+              },
+              "saldo": {
+                "type": "number",
+                "format": "decimal"
+              },
+              "descripcion": {
+                "type": "string",
+                "nullable": true
+              },
+              "isAbono": {
+                "type": "boolean"
+              },
+              "fK_EstatusMovimiento": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "cuentasDelGrupo": {
+                "$ref": "#/components/schemas/CT_CuentasDelGrupo"
+              },
+              "estatusMovimiento": {
+                "$ref": "#/components/schemas/CT_EstatusIngreso"
+              }
+            }
+          }
+        ]
+      },
+      "CT_CuentasDelGrupo": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_CuentaDelGrupo": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "fK_Banco": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "nombre": {
+                "type": "string",
+                "maxLength": 50,
+                "minLength": 0
+              },
+              "numCuenta": {
+                "type": "string",
+                "maxLength": 20,
+                "minLength": 0
+              },
+              "clabe": {
+                "type": "string",
+                "maxLength": 20,
+                "minLength": 0
+              },
+              "fK_EmpresaDelGrupo": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "fK_Divisa": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "fK_TipoDeCuenta": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "fK_EstatusCuenta": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "banco": {
+                "$ref": "#/components/schemas/CT_Bancos"
+              },
+              "empresasDelGrupo": {
+                "$ref": "#/components/schemas/CT_EmpresasDelGrupo"
+              },
+              "divisa": {
+                "$ref": "#/components/schemas/CT_Divisas"
+              },
+              "tipoDeCuenta": {
+                "$ref": "#/components/schemas/CT_TiposDeCuenta"
+              },
+              "estatusCuenta": {
+                "$ref": "#/components/schemas/CT_EstatusCuenta"
+              }
+            }
+          }
+        ]
+      },
+      "CT_Bancos": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_Banco": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "nombre": {
+                "type": "string",
+                "maxLength": 50,
+                "minLength": 0
+              }
+            }
+          }
+        ]
+      },
+      "CT_EmpresasDelGrupo": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_EmpresasDelGrupo": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "representanteLegal": {
+                "type": "string",
+                "maxLength": 200,
+                "minLength": 0
+              },
+              "razonSocial": {
+                "type": "string",
+                "maxLength": 200,
+                "minLength": 0
+              }
+            }
+          }
+        ]
+      },
+      "CT_Divisas": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_Divisa": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "divisa": {
+                "type": "string",
+                "maxLength": 50,
+                "minLength": 0
+              },
+              "isoCode": {
+                "type": "string",
+                "maxLength": 3,
+                "minLength": 0
+              }
+            }
+          }
+        ]
+      },
+      "CT_TiposDeCuenta": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_TipoDeCuenta": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "tipo": {
+                "type": "string",
+                "maxLength": 200,
+                "minLength": 0
+              }
+            }
+          }
+        ]
+      },
+      "CT_EstatusCuenta": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_EstatusCuenta": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "estatusCuenta": {
+                "type": "string",
+                "maxLength": 100,
+                "minLength": 0
+              }
+            }
+          }
+        ]
+      },
+      "CT_EstatusIngreso": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseAuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pK_EstatusIngreso": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "estatus": {
+                "type": "string",
+                "maxLength": 50,
+                "minLength": 0
+              }
+            }
+          }
+        ]
+      },
+      "PaginatedListOfBankResumeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BankResumeDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "BankResumeDto": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BankMovementDto"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ingresoEgresoId": {
+                "type": "integer",
+                "format": "int32",
+                "nullable": true
+              },
+              "movementId": {
+                "type": "integer",
+                "format": "int32",
+                "nullable": true
+              },
+              "estatusIngresoEgresoId": {
+                "type": "integer",
+                "format": "int32",
+                "nullable": true
+              },
+              "estatusIngresoEgreso": {
+                "type": "string",
+                "nullable": true
+              },
+              "clienteId": {
+                "type": "integer",
+                "format": "int32",
+                "nullable": true
+              },
+              "cliente": {
+                "type": "string",
+                "nullable": true
+              },
+              "movimientoBancoId": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ]
+      },
+      "BankMovementDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "fechaMovimiento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "horaMovimiento": {
+            "type": "string",
+            "format": "duration"
+          },
+          "conceptoReferencia": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "abono": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "cargo": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "saldo": {
+            "type": "number",
+            "format": "decimal"
+          }
+        }
+      },
+      "CatalogosPredefinidosDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "banco": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "divisa": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DivisaDto"
+            }
+          },
+          "estatusCuenta": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "estatusEgreso": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "estatusIngreso": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "estatusRpa": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "permiso": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "tipoCliente": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "tipoCuenta": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "tipoMovimiento": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "tipoPagoEgreso": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "tipoPagoIngreso": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          },
+          "tipoToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDto"
+            }
+          }
+        }
+      },
+      "DivisaDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "isoCode": {
+            "type": "string"
+          }
+        }
+      },
+      "GetCatalogosPredefinidosQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ClienteDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "tipoCliente": {
+            "type": "string"
+          },
+          "tipoClienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "porcentajeComision": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "clientePadre": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientePadreId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "avisaleAMiPapa": {
+            "type": "boolean"
+          },
+          "comisionSinIVA": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "NewClientCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "porcentajeComision": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "comisionSinIVA": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "clientePadreID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "avisaleAMiPapa": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DeleteClientCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateClientCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "porcentajeComision": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "comisionSinIVA": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "clientePadreID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "avisaleAMiPapa": {
+            "type": "boolean",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfClienteDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClienteDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetClientsTodosListQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetClientsSearchListQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ClienteDtoFull": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ClienteDto"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "cuentasRetorno": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/CuentaRetornoDto"
+                }
+              },
+              "wallets": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/WalletDto"
+                }
+              },
+              "comisionesTipoPago": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ComisionTipoPagoDto"
+                }
+              },
+              "contactos": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ContactoDto"
+                }
+              },
+              "hijosDirectos": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ClienteDto"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "CuentaRetornoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cuentaRetornoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "banco": {
+            "type": "string"
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numCuenta": {
+            "type": "string"
+          },
+          "clabe": {
+            "type": "string"
+          },
+          "divisa": {
+            "type": "string"
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cliente": {
+            "type": "string"
+          }
+        }
+      },
+      "WalletDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "walletId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "saldo": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "nombreWallet": {
+            "type": "string"
+          },
+          "divisa": {
+            "type": "string"
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limiteCredito": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "ComisionTipoPagoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "comisionTipoPagoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "porcentajeComision": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "tipoPagoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoPago": {
+            "type": "string"
+          }
+        }
+      },
+      "ContactoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contactoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "esPrincipal": {
+            "type": "boolean"
+          },
+          "freshdeskClienteId": {
+            "type": "string",
+            "nullable": true
+          },
+          "notificado": {
+            "type": "boolean",
+            "nullable": true
+          }
+        }
+      },
+      "NewComisionTipoPagoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoPagoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "porcentajeComision": {
+            "type": "number",
+            "format": "decimal"
+          }
+        }
+      },
+      "DeleteComisionTipoPagoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "comisionTipoPagoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateComisionTipoPagoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "comisionTipoPagoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoPagoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "porcentajeComision": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfComisionTipoPagoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComisionTipoPagoDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "NewContactoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "esPrincipal": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DeleteContactoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contactoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateContactoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contactoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "esPrincipal": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "freshdeskClientID": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfContactoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContactoDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CuentaGrupoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cuentaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "banco": {
+            "type": "string"
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numCuenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "clabe": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisa": {
+            "type": "string"
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoDeCuenta": {
+            "type": "string"
+          },
+          "tipoDeCuentaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estatusCuenta": {
+            "type": "string"
+          },
+          "estatusCuentaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "empresaGrupo": {
+            "type": "string"
+          },
+          "empresaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accesoBanco": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/AccesoBancoDto"
+              }
+            ]
+          },
+          "movimientosDias": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ultimoAcceso": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "NewCuentaGrupoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "empresaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numCuenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "clabe": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoDeCuentaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "movimientosDias": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteCuentaGrupoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cuentaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateCuentaGrupoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cuentaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numCuenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "clabe": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoDeCuentaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estatusCuentaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "movimientosDias": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string"
+          }
+        }
+      },
+      "PaginatedListOfCuentaGrupoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CuentaGrupoDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CuentaGrupoDtoFull": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CuentaGrupoDto"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "NewCuentaRetornoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numCuenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "clabe": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteCuentaRetornoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cuentaRetornoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateCuentaRetornoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cuentaRetornoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numCuenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "clabe": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfCuentaRetornoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CuentaRetornoDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CuentaRetornoDtoFull": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CuentaRetornoDto"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetDivisasQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "EgresoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "egresoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaHoraPago": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "monto": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "cuentaGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuentaGrupoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "concepto": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuentaDestino": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuentaDestinoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "comprobanteRuta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPagoEgreso": {
+            "type": "string"
+          },
+          "tipoPagoEgresoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estatusEgreso": {
+            "type": "string"
+          },
+          "estatusEgresoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pagadoPorNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "pagadoPorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaProgramada": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaListoRecoleccion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaEntregado": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "wallet": {
+            "type": "string",
+            "nullable": true
+          },
+          "walletId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "divisa": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "banco": {
+            "type": "string",
+            "nullable": true
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "empresaGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "empresaGrupoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "contactoNombre": {
+            "type": "string"
+          },
+          "contactoTelefono": {
+            "type": "string"
+          },
+          "contactoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipoCambio": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "NewEgresoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "montoOrigen": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "cuentaDestinoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoPagoEgresoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "walletId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoCambio": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "contactoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "montoDestino": {
+            "type": "number",
+            "format": "decimal"
+          }
+        }
+      },
+      "DeleteEgresoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "egresoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "EnProcesoEgresoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "egresoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "PagoEfectivoEgresoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "egresoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaProgramada": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaListoRecoleccion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaEntregado": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfEgresoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EgresoDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "FileDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "type": "string",
+            "format": "byte"
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "fileName": {
+            "type": "string"
+          }
+        }
+      },
+      "EmpresaGrupoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "empresaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "representanteLegal": {
+            "type": "string"
+          },
+          "razonSocial": {
+            "type": "string"
+          }
+        }
+      },
+      "NewEmpresaGrupoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "razonSocial": {
+            "type": "string"
+          },
+          "representanteLegal": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteEmpresaGrupoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "empresaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateEmpresaGrupoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "empresaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "razonSocial": {
+            "type": "string",
+            "nullable": true
+          },
+          "representanteLegal": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfEmpresaGrupoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmpresaGrupoDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "EmpresaGrupoDtoFull": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EmpresaGrupoDto"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "cuentasDelGrupo": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CuentaGrupoDto"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "NewErrorWebCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "functionName": {
+            "type": "string"
+          }
+        }
+      },
+      "GetEstatusCuentaQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetEstatusEgresoQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetEstatusIngresoQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetEstatusRPAQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "IngresoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ingresoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaHora": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "monto": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "cuentaGrupo": {
+            "type": "string"
+          },
+          "cuentaGrupoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cuentaGrupoBanco": {
+            "type": "string"
+          },
+          "cuentaGrupoBancoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cuentaGrupoDivisa": {
+            "type": "string"
+          },
+          "cuentaGrupoDivisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "concepto": {
+            "type": "string"
+          },
+          "comprobanteRuta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPagoIngreso": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPagoIngresoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estatusIngreso": {
+            "type": "string",
+            "nullable": true
+          },
+          "estatusIngresoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaNotificado": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "contactoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contactoNombre": {
+            "type": "string"
+          },
+          "contactoTelefono": {
+            "type": "string"
+          },
+          "wallet": {
+            "type": "string"
+          },
+          "walletId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cliente": {
+            "type": "string"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cuentaOrigen": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "DeleteIngresoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ingresoId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "AuditCheckIngresoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ingresoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rebotado": {
+            "type": "boolean"
+          }
+        }
+      },
+      "MovimientoWalletDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "movimientoWalletId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "wallet": {
+            "type": "string"
+          },
+          "walletId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "walletPorcentajeComision": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "monto": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "divisa": {
+            "type": "string"
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoCambio": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "tipoMovimientoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoMovimiento": {
+            "type": "string"
+          },
+          "tipoPagoEgresoIngresoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoPagoEgresoIngreso": {
+            "type": "string",
+            "nullable": true
+          },
+          "ingresoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "egresoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fK_MovimientoWalletId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "saldoAnterior": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "saldoFinal": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estatusIngresoEgresoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estatusIngresoEgreso": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuentaGrupoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cuentaGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "bancoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "banco": {
+            "type": "string",
+            "nullable": true
+          },
+          "empresaGrupoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "empresaGrupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHoraPago": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaProgramada": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaListoRecoleccion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaEntregado": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "concepto": {
+            "type": "string"
+          },
+          "fK_MovimientoBancoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        }
+      },
+      "NewMovimientoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "walletOrigenId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "montoOrigen": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "concepto": {
+            "type": "string"
+          }
+        }
+      },
+      "NewMovimientoWalletCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "walletOrigenId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "montoOrigen": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "tipoCambio": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "walletDestinoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "montoDestino": {
+            "type": "number",
+            "format": "decimal"
+          }
+        }
+      },
+      "PaginatedListOfMovimientoWalletDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MovimientoWalletDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetPermisosQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "RoleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "GetRolesQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetTipoCuentaQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetTipoMovimientoQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetTipoPagoEgresoQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetTipoPagoIngresoQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetTipoTokenQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "NewWalletCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "saldo": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "nombreWallet": {
+            "type": "string"
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limiteCredito": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "DeleteWalletCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "walletId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateWalletCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "walletId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "saldo": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "nombreWallet": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "limiteCredito": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedListOfWalletDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WalletDto"
+            }
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "WalletDtoFull": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/WalletDto"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "movimientos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MovimientoWalletDto"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
