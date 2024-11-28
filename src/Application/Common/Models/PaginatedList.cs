@@ -4,7 +4,7 @@ namespace ProjectAPI.Application.Common.Models;
 
 public class PaginatedList<T>
 {
-    public List<T> Items { get; }
+    public List<T> Data { get; }
     public int PageNumber { get; }
     public int TotalPages { get; }
     public int TotalCount { get; }
@@ -14,7 +14,7 @@ public class PaginatedList<T>
         PageNumber = pageNumber;
         TotalPages = (int)Math.Ceiling(count / (decimal)pageSize);
         TotalCount = count;
-        Items = items;
+        Data = items;
     }
 
     public bool HasPreviousPage => PageNumber > 0;

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using ProjectAPI.Application.Common.Models;
 using ProjectAPI.Application.Project.Commands;
 using ProjectAPI.Application.Security.Commands;
 using ProjectAPI.Domain.Entities;
@@ -20,7 +21,7 @@ public class ProjectController : ApiControllerBase
 
     [HttpGet]
     [Route("GetAll")]
-    public Task<List<Tbl_Project>> GetAll([FromQuery] GetProjectCommand command) => _mediator.Send(command);
+    public Task<PaginatedList<Tbl_Project>> GetAll([FromQuery] GetByFiltersProjectCommand command) => _mediator.Send(command);
     [HttpPut]
     [Route("Update")]
     public Task<bool> Update([FromQuery] UpdateProjectCommand command) => _mediator.Send(command);
