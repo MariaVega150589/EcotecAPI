@@ -24,7 +24,7 @@ public class ProjectController : ApiControllerBase
     public Task<PaginatedList<Tbl_Project>> GetAll([FromQuery] GetByFiltersProjectCommand command) => _mediator.Send(command);
     [HttpPut]
     [Route("Update")]
-    public Task<bool> Update([FromQuery] UpdateProjectCommand command) => _mediator.Send(command);
+    public Task<bool> Update([FromBody] UpdateProjectCommand command) => _mediator.Send(command);
 
     [HttpDelete]
     [Route("Delete")]
