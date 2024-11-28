@@ -36,8 +36,8 @@ public class GetProjectCommandHandler : IRequestHandler<GetByFiltersProjectComma
         try
         {
             var entities = await _context.CT_Proyectos
-              .Where(x => x.Status == true
-              || x.Id == (request.Id ?? x.Id)
+              .Where(x =>
+               x.Id == (request.Id ?? x.Id)
               || x.Name == (request.Name ?? x.Name)
               || x.Description == (request.Description ?? x.Description)
               || x.AssignedTo == (request.AssignedTo ?? x.AssignedTo)  

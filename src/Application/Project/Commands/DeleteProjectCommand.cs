@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using ProjectAPI.Application.Common.Interfaces;
 using ProjectAPI.Domain.Entities;
 
@@ -32,7 +33,7 @@ public class DeleteCommandHandler : IRequestHandler<DeleteProjectCommand, bool>
             {
                 var p = _context.CT_Proyectos.Find(request.Id);
 
-                p.Status = false;
+                _context.CT_Proyectos.Remove(p).State = EntityState.Deleted;
                 await _context.SaveChangesAsync(cancellationToken);
                 return true;
             }
