@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cSbiAXjt4PY=",
+  "dgSpecHash": "9IwVX5H82mQ=",
   "success": true,
-  "projectFilePath": "C:\\Examen\\ProjectAPI\\src\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\ecotec\\EcotecAPI\\src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\magui\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\magui\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",

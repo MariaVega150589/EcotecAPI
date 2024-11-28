@@ -26,3 +26,17 @@ C:\Examen\ProjectAPI\src\Domain\obj\Debug\net6.0\ProjectAPI.Domain.dll
 C:\Examen\ProjectAPI\src\Domain\obj\Debug\net6.0\refint\ProjectAPI.Domain.dll
 C:\Examen\ProjectAPI\src\Domain\obj\Debug\net6.0\ProjectAPI.Domain.pdb
 C:\Examen\ProjectAPI\src\Domain\obj\Debug\net6.0\ref\ProjectAPI.Domain.dll
+C:\ecotec\EcotecAPI\src\Domain\bin\Debug\net6.0\ProjectAPI.Domain.deps.json
+C:\ecotec\EcotecAPI\src\Domain\bin\Debug\net6.0\ProjectAPI.Domain.runtimeconfig.json
+C:\ecotec\EcotecAPI\src\Domain\bin\Debug\net6.0\ProjectAPI.Domain.dll
+C:\ecotec\EcotecAPI\src\Domain\bin\Debug\net6.0\ProjectAPI.Domain.pdb
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\ProjectAPI.Domain.dll
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\refint\ProjectAPI.Domain.dll
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\ProjectAPI.Domain.pdb
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\Domain.genruntimeconfig.cache
+C:\ecotec\EcotecAPI\src\Domain\obj\Debug\net6.0\ref\ProjectAPI.Domain.dll

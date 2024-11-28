@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C6Id9dvSM34=",
+  "dgSpecHash": "8uKb3Sr2W+Q=",
   "success": true,
-  "projectFilePath": "C:\\Examen\\ProjectAPI\\src\\WebUI\\WebUI.csproj",
+  "projectFilePath": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\magui\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\magui\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

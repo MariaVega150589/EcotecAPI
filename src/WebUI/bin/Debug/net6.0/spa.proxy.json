@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "",
 "LaunchCommand": "",
-"WorkingDirectory": "C:\\Examen\\ProjectAPI\\src\\WebUI",
+"WorkingDirectory": "C:\\ecotec\\EcotecAPI\\src\\WebUI",
 "MaxTimeoutInSeconds": "120"
 }
 }

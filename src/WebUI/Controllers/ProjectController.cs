@@ -18,7 +18,9 @@ public class ProjectController : ApiControllerBase
     [Route("Add")]
     public Task<bool> Add([FromBody] AddProjectCommand command) => _mediator.Send(command);
 
-
+    [HttpGet]
+    [Route("GetAll")]
+    public Task<List<Tbl_Project>> GetAll([FromQuery] GetProjectCommand command) => _mediator.Send(command);
     [HttpPut]
     [Route("Update")]
     public Task<bool> Update([FromBody] UpdateProjectCommand command) => _mediator.Send(command);

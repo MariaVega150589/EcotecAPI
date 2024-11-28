@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Examen\\ProjectAPI\\src\\Domain\\Domain.csproj": {}
+    "C:\\ecotec\\EcotecAPI\\src\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Examen\\ProjectAPI\\src\\Domain\\Domain.csproj": {
+    "C:\\ecotec\\EcotecAPI\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Examen\\ProjectAPI\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\ecotec\\EcotecAPI\\src\\Domain\\Domain.csproj",
         "projectName": "ProjectAPI.Domain",
-        "projectPath": "C:\\Examen\\ProjectAPI\\src\\Domain\\Domain.csproj",
+        "projectPath": "C:\\ecotec\\EcotecAPI\\src\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\magui\\.nuget\\packages\\",
-        "outputPath": "C:\\Examen\\ProjectAPI\\src\\Domain\\obj\\",
+        "outputPath": "C:\\ecotec\\EcotecAPI\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

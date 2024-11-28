@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6XpUpCTaz33PuE43Nagi0kBN5hGsElRSoYeL5aa2KHo=",
+  "Hash": "eaVpuN6I4aXObBRMg46sWcXSYvRPoZHoU7COmoXGTcs=",
   "Source": "ProjectAPI.WebUI",
   "BasePath": "_content/ProjectAPI.WebUI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ProjectAPI.WebUI\\wwwroot",
       "Source": "ProjectAPI.WebUI",
-      "ContentRoot": "C:\\Examen\\ProjectAPI\\src\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\wwwroot\\",
       "BasePath": "_content/ProjectAPI.WebUI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Examen\\ProjectAPI\\src\\WebUI\\wwwroot\\api\\specification.json",
+      "Identity": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\wwwroot\\api\\specification.json",
       "SourceId": "ProjectAPI.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Examen\\ProjectAPI\\src\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\wwwroot\\",
       "BasePath": "_content/ProjectAPI.WebUI",
       "RelativePath": "api/specification.json",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\api\\specification.json"
     },
     {
-      "Identity": "C:\\Examen\\ProjectAPI\\src\\WebUI\\wwwroot\\favicon.ico",
+      "Identity": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\wwwroot\\favicon.ico",
       "SourceId": "ProjectAPI.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Examen\\ProjectAPI\\src\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\wwwroot\\",
       "BasePath": "_content/ProjectAPI.WebUI",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Examen\\ProjectAPI\\src\\WebUI\\wwwroot\\specification.json",
+      "Identity": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\wwwroot\\specification.json",
       "SourceId": "ProjectAPI.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Examen\\ProjectAPI\\src\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\ecotec\\EcotecAPI\\src\\WebUI\\wwwroot\\",
       "BasePath": "_content/ProjectAPI.WebUI",
       "RelativePath": "specification.json",
       "AssetKind": "All",
